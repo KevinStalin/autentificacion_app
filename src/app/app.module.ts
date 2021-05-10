@@ -9,6 +9,9 @@ import { FooterComponent } from './components/footer/footer.component';
 // import { LoginComponent } from './views/login/login.component';
 // import { LogupComponent } from './views/logup/logup.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ErrorTailorModule } from '@ngneat/error-tailor';
+import { LoginAuntentComponent } from './views/login-auntent/login-auntent.component';
+import { LogupAutentComponent } from './views/logup-autent/logup-autent.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +20,25 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     // LoginComponent,
     // LogupComponent,
-    routingComponents
+    routingComponents,
+    LoginAuntentComponent,
+    LogupAutentComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ErrorTailorModule.forRoot({
+      errors: {
+        useValue: {
+          required: 'campo requerido',
+          minlength: ({ requiredLength, actualLength }) =>
+            `Expect ${requiredLength} but got ${actualLength}`,
+          invalidAddress: error => `Address isn't valid`
+        }
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

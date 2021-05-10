@@ -1,0 +1,20 @@
+/* Ponr de color rojo  si (a tocado el campo y el valor es invalido)*/
+
+input.ng-invalid.ng-touched {
+    border: solid 2px rgb(187, 59, 59);
+}
+
+select.ng-invalid.ng-touched {
+    border: solid 2px rgb(187, 59, 59);
+}
+
+
+/* si el valor es valido ponder en verde  */
+
+input.ng-valid {
+    border: solid 2px rgb(114, 179, 84);
+}
+
+select.ng-valid {
+    border: solid 2px rgb(114, 179, 84);
+}
