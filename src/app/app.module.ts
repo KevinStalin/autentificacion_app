@@ -13,6 +13,8 @@ import { ErrorTailorModule } from '@ngneat/error-tailor';
 import { LoginAuntentComponent } from './views/login-auntent/login-auntent.component';
 import { LogupAutentComponent } from './views/logup-autent/logup-autent.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,8 @@ import { LogupAutentComponent } from './views/logup-autent/logup-autent.componen
           invalidAddress: error => `Address isn't valid`
         }
       }
-    })
+    }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

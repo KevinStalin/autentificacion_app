@@ -1,4 +1,20 @@
 <app-header></app-header>
 
+<div class="container">
+    <table class="table table-striped">
+        <tr>
+
+        </tr>
+        <tbody>
+            <tr *ngFor="let p of ser.paisess">
+                <td><img src="../../../assets/imagenes/{{p.n1}}.png"> {{p.n1}}</td>
+                <!-- <td>{{p.n1}}</td> -->
+                <td><img src="../../../assets/imagenes/{{p.n2}}.png"> {{p.n2}}</td>
+                <td><img src="../../../assets/imagenes/{{p.n3}}.png"> {{p.n3}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
 
 <app-footer></app-footer>

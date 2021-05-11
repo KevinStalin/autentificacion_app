@@ -25,8 +25,9 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">contact_mail</i></span>
                     </div>
-                    <input formControlName="email" type="text" class="form-control" placeholder="email@example.com">
+                    <input formControlName="email" type="text" class="form-control" placeholder="email@example.com" [controlErrorsTpl]="emailError">
                 </div>
+                {{formLogup.get("email").errors|json}}
             </div>
         </div>
 
@@ -73,7 +74,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">contact_phone</i></span>
                     </div>
-                    <input formControlName="telefono" type="number" class="form-control" placeholder="Telefono">
+                    <input formControlName="telefono" type="text" class="form-control" placeholder="Telefono">
                 </div>
             </div>
         </div>
@@ -215,10 +216,14 @@
         <i>La contraseña debe tener almenos ({{error?.minlength?.requiredLength}}), caracteres</i>
     </div>
 </ng-template>
+
 <ng-template let-error let-text="text" #cedulaErr>
     {{error|json}} {{text}}
 </ng-template>
 
+<ng-template let-error let-text="text" #emailError>
+    {{error|json}} {{text}}
+</ng-template>
 
 
 <ng-template let-error let-text="text" #messagePasswordError>
