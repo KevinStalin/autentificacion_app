@@ -1,8 +1,7 @@
 <app-header></app-header>
 <div class="container p-3">
-    <form [formGroup]="formLogup" (submit)="get_data()" errorTailor>
+    <form [formGroup]="formLogup" (submit)="get_data()">
         <legend>Registro</legend>
-        Valido:{{formLogup.valid}}
         <div class="form-group row">
             <div class="col-sm-12">
                 <div class="input-group">
@@ -10,10 +9,20 @@
                         <span class="input-group-text"><i class="material-icons">assignment_ind</i></span>
                     </div>
                     <input formControlName="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">
+                    <div *ngIf="formLogup.get('nombre').errors && formLogup.get('nombre').touched">
+                        <p *ngIf="formLogup.get('nombre').hasError('required')">
+                            El Nombre es requerido
+                        </p>
+                    </div>
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">brightness_1</i></span>
                     </div>
                     <input formControlName="apellido" type="text" class="form-control" id="apellido" placeholder="Apellido">
+                    <div *ngIf="formLogup.get('apellido').errors && formLogup.get('apellido').touched">
+                        <p *ngIf="formLogup.get('apellido').hasError('required')">
+                            El Apellido es requerido
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -25,9 +34,20 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">contact_mail</i></span>
                     </div>
-                    <input formControlName="email" type="text" class="form-control" placeholder="email@example.com" [controlErrorsTpl]="emailError">
+                    <input formControlName="email" type="email" class="form-control" placeholder="email@example.com">
+                    <div *ngIf="formLogup.get('email').errors && formLogup.get('email').touched">
+                        <p *ngIf="formLogup.get('email').hasError('required')">
+                            Es un campo requerido
+                        </p>
+                        <p *ngIf="formLogup.get('email').hasError('email')">
+                            No es un email
+                        </p>
+                        <p *ngIf="formLogup.get('email').hasError('ok')">
+                            mail usado
+                        </p>
+                    </div>
+
                 </div>
-                {{formLogup.get("email").errors|json}}
             </div>
         </div>
 
@@ -38,7 +58,12 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">email</i></span>
                     </div>
-                    <input formControlName="cedula" type="text" class="form-control" placeholder="Cedula" [controlErrorsTpl]="cedulaErr">
+                    <input formControlName="cedula" type="text" class="form-control" placeholder="Cedula">
+                    <div *ngIf="formLogup.get('cedula').errors && formLogup.get('cedula').touched">
+                        <p *ngIf="formLogup.get('cedula').hasError('required')">
+                            La cedula es requerida
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -51,6 +76,11 @@
                         <span class="input-group-text"><i class="material-icons">account_circle</i></span>
                     </div>
                     <input formControlName="nombreUsuario" type="text" class="form-control" placeholder="Nombre usuario">
+                    <div *ngIf="formLogup.get('nombreUsuario').errors && formLogup.get('nombreUsuario').touched">
+                        <p *ngIf="formLogup.get('nombreUsuario').hasError('required')">
+                            El nombreUsuario es requerida
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -62,7 +92,16 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">https</i></span>
                     </div>
-                    <input formControlName="password" type="password" id="password" class="form-control" placeholder="contraseña" [controlErrorsTpl]="passwordError">
+                    <input formControlName="password" type="password" id="password" class="form-control" placeholder="contraseña">
+                    <!-- {{formLogup.get('password').errors|json}} -->
+                    <div *ngIf="formLogup.get('password').errors && formLogup.get('password').touched">
+                        <p *ngIf="formLogup.get('password').hasError('required')">
+                            La contraseña es requerida
+                        </p>
+                        <p *ngIf="formLogup.get('password').hasError('minlength')">
+                            La contraseña debe tener almenos {{formLogup.get('password').errors.minlength.requiredLength}} caracteres
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,6 +114,14 @@
                         <span class="input-group-text"><i class="material-icons">contact_phone</i></span>
                     </div>
                     <input formControlName="telefono" type="text" class="form-control" placeholder="Telefono">
+                    <div *ngIf="formLogup.get('telefono').errors && formLogup.get('telefono').touched">
+                        <p *ngIf="formLogup.get('telefono').hasError('required')">
+                            El telefono es requerido
+                        </p>
+                        <p *ngIf="formLogup.get('telefono').hasError('minlength')">
+                            telefono {{formLogup.get('telefono').errors.minlength.requiredLength}} caracteres
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -87,6 +134,11 @@
                         <span class="input-group-text"><i class="material-icons">person_pin_circle</i></span>
                     </div>
                     <input formControlName="direccion" type="text" class="form-control" placeholder="Direccion">
+                    <div *ngIf="formLogup.get('direccion').errors && formLogup.get('direccion').touched">
+                        <p *ngIf="formLogup.get('direccion').hasError('required')">
+                            La direccion es requerida
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,7 +150,12 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">date_range</i></span>
                     </div>
-                    <input formControlName="fecha" type="text" class="form-control" placeholder="">
+                    <input formControlName="fecha" type="date" class="form-control" placeholder="">
+                    <div *ngIf="formLogup.get('fecha').errors && formLogup.get('fecha').touched">
+                        <p *ngIf="formLogup.get('fecha').hasError('required')">
+                            Fecha es Requerida
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -111,6 +168,11 @@
                         <span class="input-group-text"><i class="material-icons">redeem</i></span>
                     </div>
                     <input formControlName="codigoPostal" type="text" class="form-control" placeholder="Cod: Postal">
+                    <div *ngIf="formLogup.get('codigoPostal').errors && formLogup.get('codigoPostal').touched">
+                        <p *ngIf="formLogup.get('codigoPostal').hasError('required')">
+                            Codigo postal requerido
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -130,6 +192,11 @@
                       <option value="AB+">AB positivo</option>
                     </select>
                 </div>
+                <div *ngIf="formLogup.get('tipoSangre').errors && formLogup.get('tipoSangre').touched">
+                    <p *ngIf="formLogup.get('tipoSangre').hasError('required')">
+                        Tipo de sangre requerido
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -144,13 +211,19 @@
                       <option vcalue="No">Prefiero no decirlo</option>
                     </select>
                 </div>
+                <div *ngIf="formLogup.get('genero').errors && formLogup.get('genero').touched">
+                    <p *ngIf="formLogup.get('genero').hasError('required')">
+                        Genero requerido
+                    </p>
+                </div>
             </div>
         </div>
 
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Marca de celular</label>
             <div class="col-sm-10">
-                <select formControlName="celular" class="form-control">
+                <div class="form-group">
+                    <select formControlName="celular" class="form-control">
                     <option value="sansung">Sansung</option>
                     <option value="nokia">Nokia</option>
                     <option value="xiaomi">Xiaomi</option>
@@ -158,6 +231,12 @@
                     <option value="lg">LG</option>
                     <option value="apple">Apple</option>
                   </select>
+                </div>
+                <div *ngIf="formLogup.get('celular').errors && formLogup.get('celular').touched">
+                    <p *ngIf="formLogup.get('celular').hasError('required')">
+                        Marca de celular requerida
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -169,19 +248,31 @@
                         <span class="input-group-text"><i class="material-icons">work</i></span>
                     </div>
                     <input formControlName="oficio" type="text" class="form-control" placeholder="Oficio">
+                    <div *ngIf="formLogup.get('oficio').errors && formLogup.get('oficio').touched">
+                        <p *ngIf="formLogup.get('oficio').hasError('required')">
+                            Officio requerido
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Etnia</label>
             <div class="col-sm-10">
-                <select formControlName="etnia" class="form-control">
+                <div class="form-group">
+                    <select formControlName="etnia" class="form-control">
                     <option value="mestizo">Mestizo</option>
                     <option value="mulato">Mulato</option>
                     <option value="afro">Afro americano</option>
                     <option value="Blanco">Blanco</option>
                     <option value="otro">Otro</option>
                   </select>
+                </div>
+                <div *ngIf="formLogup.get('etnia').errors && formLogup.get('etnia').touched">
+                    <p *ngIf="formLogup.get('etnia').hasError('required')">
+                        Etnia requerida
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -210,26 +301,3 @@
     </form>
 </div>
 <app-footer></app-footer>
-<!-- tempaltes para lso erores -->
-<ng-template let-error let-text="text" #passwordError>
-    <div *ngIf="error?.minlength">
-        <i>La contraseña debe tener almenos ({{error?.minlength?.requiredLength}}), caracteres</i>
-    </div>
-</ng-template>
-
-<ng-template let-error let-text="text" #cedulaErr>
-    {{error|json}} {{text}}
-</ng-template>
-
-<ng-template let-error let-text="text" #emailError>
-    {{error|json}} {{text}}
-</ng-template>
-
-
-<ng-template let-error let-text="text" #messagePasswordError>
-    <!--  {{ error | json }} {{ text }}-->
-    <span class="control-error">Error:</span>
-    <div *ngIf="error?.minlength">
-        <i>No cumples con los caracteres minimos que son ({{error?.minlength?.requiredLength}}), ingresaste solo: {{error?.minlength?.actualLength}}</i>
-    </div>
-</ng-template>
