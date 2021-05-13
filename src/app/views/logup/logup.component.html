@@ -36,20 +36,20 @@
                         <span class="input-group-text"><i class="material-icons">contact_mail</i></span>
                     </div>
                     <input formControlName="email" type="email" class="form-control" placeholder="email@example.com">
-                    <div *ngIf="formLogup.get('email').errors && formLogup.get('email').touched">
-                        <p *ngIf="formLogup.get('email').hasError('required')">
 
-                            Es un campo requerido
-                        </p>
-                        <p *ngIf="formLogup.get('email').hasError('email')">
+                </div>
+                <div *ngIf="formLogup.get('email').errors && formLogup.get('email').touched">
+                    <p *ngIf="formLogup.get('email').hasError('required')">
 
-                            No es un e-mail
-                        </p>
-                        <p *ngIf="formLogup.get('email').hasError('ok')">
-                            E-mail ya en uso
-                        </p>
-                    </div>
+                        Es un campo requerido
+                    </p>
+                    <p *ngIf="formLogup.get('email').hasError('email')">
 
+                        No es un e-mail
+                    </p>
+                    <p *ngIf="formLogup.get('email').hasError('ok')">
+                        E-mail ya en uso
+                    </p>
                 </div>
             </div>
         </div>
@@ -189,13 +189,14 @@
                         <span class="input-group-text"><i class="material-icons">work</i></span>
                     </div>
 
+                    <input formControlName="oficio" type="text" class="form-control" placeholder="Oficio">
 
-                    <div *ngIf="formLogup.get('oficio').errors && formLogup.get('oficio').touched">
-                        <input formControlName="oficio" type="text" class="form-control" placeholder="Oficio">
-                        <p *ngIf="formLogup.get('oficio').hasError('required')">
-                            Oficio requerido
-                        </p>
-                    </div>
+                </div>
+                <div *ngIf="formLogup.get('oficio').errors && formLogup.get('oficio').touched">
+
+                    <p *ngIf="formLogup.get('oficio').hasError('required')">
+                        Oficio requerido
+                    </p>
                 </div>
             </div>
         </div>
@@ -205,9 +206,9 @@
             <div class="col-sm-3">
                 <div class="form-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" ><i class="material-icons">favorite_border</i></span>
-                    
-                        <select formControlName="tipoSangre" class="form-control" >
+                        <span class="input-group-text"><i class="material-icons">favorite_border</i></span>
+
+                        <select formControlName="tipoSangre" class="form-control">
                             <option value="" disabled selected hidden>Tipo de sangre</option>
                             <option value="O-">O negativo</option>
                             <option value="O+">O positivo</option>
@@ -218,7 +219,7 @@
                             <option value="AB-">AB negativo</option>
                             <option value="AB+">AB positivo</option>
                         </select>
-               
+
                     </div>
                 </div>
 
@@ -235,7 +236,7 @@
             <div class="col-sm-3">
                 <div class="form-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" ><i class="material-icons">wc</i></span>
+                        <span class="input-group-text"><i class="material-icons">wc</i></span>
                         <select formControlName="genero" class="form-control">
                             <option value="" disabled selected hidden>Genero</option>
                             <option value="masculino" >Masculino</option>
@@ -243,7 +244,7 @@
                             <option vcalue="Otro">Otro</option>
                             <option vcalue="No">Prefiero no decirlo</option>
                         </select>
-                </div>
+                    </div>
                 </div>
                 <div *ngIf="formLogup.get('genero').errors && formLogup.get('genero').touched">
                     <p *ngIf="formLogup.get('genero').hasError('required')">
@@ -258,8 +259,8 @@
             <div class="col-sm-3">
                 <div class="form-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" ><i class="material-icons">settings_cell</i></span>
-                <select formControlName="celular" class="form-control">
+                        <span class="input-group-text"><i class="material-icons">settings_cell</i></span>
+                        <select formControlName="celular" class="form-control">
                     <option value="" disabled selected hidden>Marca de celular</option>
                     <option value="sansung">Sansung</option>
                     <option value="nokia">Nokia</option>
@@ -268,7 +269,7 @@
                     <option value="lg">LG</option>
                     <option value="apple">Apple</option>
                   </select>
-            </div>
+                    </div>
                 </div>
                 <div *ngIf="formLogup.get('celular').errors && formLogup.get('celular').touched">
                     <p *ngIf="formLogup.get('celular').hasError('required')">
@@ -284,8 +285,8 @@
             <div class="col-sm-3">
                 <div class="form-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" ><i class="material-icons">public</i></span>
-                <select formControlName="etnia" class="form-control">
+                        <span class="input-group-text"><i class="material-icons">public</i></span>
+                        <select formControlName="etnia" class="form-control">
                     <option value="" disabled selected hidden>Etnia</option>
                     <option value="mestizo">Mestizo</option>
                     <option value="mulato">Mulato</option>
@@ -293,7 +294,7 @@
                     <option value="Blanco">Blanco</option>
                     <option value="otro">Otro</option>
                   </select>
-            </div>
+                    </div>
                 </div>
                 <div *ngIf="formLogup.get('etnia').errors && formLogup.get('etnia').touched">
                     <p *ngIf="formLogup.get('etnia').hasError('required')">

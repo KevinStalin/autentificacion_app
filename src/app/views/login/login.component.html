@@ -22,16 +22,18 @@
 
 
                                 </div>
-                                <br>
+
+
+
                                 <div *ngIf="formLogin.get('email').errors && formLogin.get('email').touched">
-                                    <p *ngIf="formLogin.get('email').hasError('required')">
 
-                                        Es un campo requerido
-                                    </p>
-                                    <p *ngIf="formLogin.get('email').hasError('email')">
 
-                                        No es un e-mail
-                                    </p>
+                                    <small *ngIf="formLogin.get('email').hasError('required')">Campo Requerido</small>
+
+
+
+                                    <small *ngIf="formLogin.get('email').hasError('email')">No es un e-mail</small>
+
 
                                 </div>
 
@@ -47,11 +49,11 @@
 
 
                                 </div>
-                                <br>
+
                                 <div *ngIf="formLogin.get('password').errors && formLogin.get('password').touched">
-                                    <p *ngIf="formLogin.get('password').hasError('required')">
-                                        La contraseña es requerida
-                                    </p>
+
+                                    <small *ngIf="formLogin.get('password').hasError('required')">.a&nbsp;*5 La contraseña es requerida</small>
+
 
                                 </div>
                             </div>
