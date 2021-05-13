@@ -33,4 +33,6 @@ select.ng-valid {
 
 small {
     color: red;
+    font-family: Monaco;
+    font: size 14px;
 }
