@@ -30,3 +30,7 @@ select.ng-valid {
     font-family: Monaco;
     font: size 14px;
 }
+
+p{
+    color:red;
+}
