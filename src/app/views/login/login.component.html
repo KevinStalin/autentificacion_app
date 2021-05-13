@@ -46,13 +46,13 @@
                                         <span class="input-group-text"><i class="material-icons">https</i></span>
                                     </div>
                                     <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-
+                                    <div class="valid-feedback">Success! You've done it.</div>
 
                                 </div>
 
                                 <div *ngIf="formLogin.get('password').errors && formLogin.get('password').touched">
 
-                                    <small *ngIf="formLogin.get('password').hasError('required')">.a&nbsp;*5 La contraseña es requerida</small>
+                                    <small *ngIf="formLogin.get('password').hasError('required')"> La contraseña es requerida</small>
 
 
                                 </div>
