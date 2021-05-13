@@ -11,7 +11,7 @@
                     <input formControlName="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">
                     <div *ngIf="formLogup.get('nombre').errors && formLogup.get('nombre').touched">
                         <p *ngIf="formLogup.get('nombre').hasError('required')">
-                            El Nombre es requerido
+                            <br> El nombre es requerido
                         </p>
                     </div>
                     <div class="input-group-prepend">
@@ -20,7 +20,8 @@
                     <input formControlName="apellido" type="text" class="form-control" id="apellido" placeholder="Apellido">
                     <div *ngIf="formLogup.get('apellido').errors && formLogup.get('apellido').touched">
                         <p *ngIf="formLogup.get('apellido').hasError('required')">
-                            El Apellido es requerido
+
+                            El apellido es requerido
                         </p>
                     </div>
                 </div>
@@ -29,7 +30,7 @@
 
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Correo</label>
-            <div class="col-sm-10">
+            <div class="col-sm-5">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">contact_mail</i></span>
@@ -37,13 +38,15 @@
                     <input formControlName="email" type="email" class="form-control" placeholder="email@example.com">
                     <div *ngIf="formLogup.get('email').errors && formLogup.get('email').touched">
                         <p *ngIf="formLogup.get('email').hasError('required')">
+
                             Es un campo requerido
                         </p>
                         <p *ngIf="formLogup.get('email').hasError('email')">
-                            No es un email
+
+                            No es un e-mail
                         </p>
                         <p *ngIf="formLogup.get('email').hasError('ok')">
-                            mail usado
+                            E-mail ya en uso
                         </p>
                     </div>
 
@@ -53,7 +56,7 @@
 
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Cedula</label>
-            <div class="col-sm-10">
+            <div class="col-sm-5">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">email</i></span>
@@ -61,6 +64,7 @@
                     <input formControlName="cedula" type="text" class="form-control" placeholder="Cedula">
                     <div *ngIf="formLogup.get('cedula').errors && formLogup.get('cedula').touched">
                         <p *ngIf="formLogup.get('cedula').hasError('required')">
+
                             La cedula es requerida
                         </p>
                     </div>
@@ -70,7 +74,7 @@
 
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Nombre Usuario</label>
-            <div class="col-sm-10">
+            <div class="col-sm-5">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">account_circle</i></span>
@@ -78,7 +82,7 @@
                     <input formControlName="nombreUsuario" type="text" class="form-control" placeholder="Nombre usuario">
                     <div *ngIf="formLogup.get('nombreUsuario').errors && formLogup.get('nombreUsuario').touched">
                         <p *ngIf="formLogup.get('nombreUsuario').hasError('required')">
-                            El nombreUsuario es requerida
+                            El nombre de usuario es requerido
                         </p>
                     </div>
                 </div>
@@ -87,7 +91,7 @@
 
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Contraseña</label>
-            <div class="col-sm-10">
+            <div class="col-sm-5">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">https</i></span>
@@ -108,7 +112,7 @@
 
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Telefono</label>
-            <div class="col-sm-10">
+            <div class="col-sm-5">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">contact_phone</i></span>
@@ -128,7 +132,7 @@
 
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Direccion</label>
-            <div class="col-sm-10">
+            <div class="col-sm-5">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">person_pin_circle</i></span>
@@ -136,7 +140,7 @@
                     <input formControlName="direccion" type="text" class="form-control" placeholder="Direccion">
                     <div *ngIf="formLogup.get('direccion').errors && formLogup.get('direccion').touched">
                         <p *ngIf="formLogup.get('direccion').hasError('required')">
-                            La direccion es requerida
+                            La dirección es requerida
                         </p>
                     </div>
                 </div>
@@ -145,7 +149,7 @@
 
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Fecha</label>
-            <div class="col-sm-10">
+            <div class="col-sm-5">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">date_range</i></span>
@@ -153,7 +157,7 @@
                     <input formControlName="fecha" type="date" class="form-control" placeholder="">
                     <div *ngIf="formLogup.get('fecha').errors && formLogup.get('fecha').touched">
                         <p *ngIf="formLogup.get('fecha').hasError('required')">
-                            Fecha es Requerida
+                            Fecha es requerida
                         </p>
                     </div>
                 </div>
@@ -162,7 +166,7 @@
 
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Codigo Postal</label>
-            <div class="col-sm-10">
+            <div class="col-sm-5">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">redeem</i></span>
@@ -178,8 +182,25 @@
         </div>
 
         <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Oficio</label>
+            <div class="col-sm-5">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="material-icons">work</i></span>
+                    </div>
+                    <input formControlName="oficio" type="text" class="form-control" placeholder="Oficio">
+                    <div *ngIf="formLogup.get('oficio').errors && formLogup.get('oficio').touched">
+                        <p *ngIf="formLogup.get('oficio').hasError('required')">
+                            Oficio requerido
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Tipo de sangre</label>
-            <div class="col-sm-10">
+            <div class="col-sm-3">
                 <div class="form-group">
                     <select formControlName="tipoSangre" class="form-control">
                       <option value="O-">O negativo</option>
@@ -202,7 +223,7 @@
 
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Genero</label>
-            <div class="col-sm-10">
+            <div class="col-sm-3">
                 <div class="form-group">
                     <select formControlName="genero" class="form-control">
                       <option value="masculino" >Masculino</option>
@@ -221,7 +242,7 @@
 
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Marca de celular</label>
-            <div class="col-sm-10">
+            <div class="col-sm-3">
                 <div class="form-group">
                     <select formControlName="celular" class="form-control">
                     <option value="sansung">Sansung</option>
@@ -240,25 +261,10 @@
             </div>
         </div>
 
-        <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Oficio</label>
-            <div class="col-sm-10">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="material-icons">work</i></span>
-                    </div>
-                    <input formControlName="oficio" type="text" class="form-control" placeholder="Oficio">
-                    <div *ngIf="formLogup.get('oficio').errors && formLogup.get('oficio').touched">
-                        <p *ngIf="formLogup.get('oficio').hasError('required')">
-                            Officio requerido
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Etnia</label>
-            <div class="col-sm-10">
+            <div class="col-sm-3">
                 <div class="form-group">
                     <select formControlName="etnia" class="form-control">
                     <option value="mestizo">Mestizo</option>
