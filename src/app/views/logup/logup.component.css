@@ -2,14 +2,14 @@
 
 input.ng-invalid.ng-touched {
     border: solid 2px rgb(187, 59, 59);
-    border-radius: 80px 20px;
+    border-radius: 20px;
     font-family: Monaco;
     font: size 14px;
 }
 
 select.ng-invalid.ng-touched {
     border: solid 2px rgb(187, 59, 59);
-    border-radius: 80px 20px;
+    border-radius: 20px;
     font-family: Monaco;
     font: size 14px;
 }

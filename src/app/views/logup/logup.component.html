@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="container p-3">
+<div class="container p-6">
     <form [formGroup]="formLogup" (submit)="get_data()">
         <legend>Registro</legend>
         <div class="form-group row">
@@ -188,8 +188,10 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">work</i></span>
                     </div>
-                    <input formControlName="oficio" type="text" class="form-control" placeholder="Oficio">
+
+
                     <div *ngIf="formLogup.get('oficio').errors && formLogup.get('oficio').touched">
+                        <input formControlName="oficio" type="text" class="form-control" placeholder="Oficio">
                         <p *ngIf="formLogup.get('oficio').hasError('required')">
                             Oficio requerido
                         </p>
@@ -213,6 +215,7 @@
                       <option value="AB+">AB positivo</option>
                     </select>
                 </div>
+
                 <div *ngIf="formLogup.get('tipoSangre').errors && formLogup.get('tipoSangre').touched">
                     <p *ngIf="formLogup.get('tipoSangre').hasError('required')">
                         Tipo de sangre requerido
