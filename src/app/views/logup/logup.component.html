@@ -1,32 +1,55 @@
 <app-header></app-header>
+
 <div class="container p-6">
+    
     <form [formGroup]="formLogup" (submit)="get_data()">
+        <br><br>
+        <div align="center">
         <legend>Registro</legend>
+    </div>
         <div class="form-group row">
-            <div class="col-sm-12">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Nombre</label>
+            <div class="col-sm-6">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">account_circle</i></span>
                     </div>
                     <input formControlName="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">
-                    <div *ngIf="formLogup.get('nombre').errors && formLogup.get('nombre').touched">
-                        <p *ngIf="formLogup.get('nombre').hasError('required')">
-                            <br> El nombre es requerido
-                        </p>
-                    </div>
+                    
+
+                </div>
+                <div *ngIf="formLogup.get('nombre').errors && formLogup.get('nombre').touched">
+                    <p *ngIf="formLogup.get('nombre').hasError('required')">
+                        
+                        El nombre es requerido
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Apellido</label>
+        <div class="col-sm-6">
+                <div class="input-group">
+                   
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">account_circle</i></span>
                     </div>
                     <input formControlName="apellido" type="text" class="form-control" id="apellido" placeholder="Apellido">
-                    <div *ngIf="formLogup.get('apellido').errors && formLogup.get('apellido').touched">
-                        <p *ngIf="formLogup.get('apellido').hasError('required')">
+                   
+                   
+                </div>
+                <div *ngIf="formLogup.get('apellido').errors && formLogup.get('apellido').touched">
+                        
+                    <p *ngIf="formLogup.get('apellido').hasError('required')">
 
-                            El apellido es requerido
-                        </p>
-                    </div>
+                        El apellido es requerido
+                    </p>
                 </div>
             </div>
         </div>
+        
+    
 
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Correo</label>
@@ -55,19 +78,20 @@
         </div>
 
         <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Cedula</label>
+            <label for="staticEmail" class="col-sm-2 col-form-label">Cédula</label>
             <div class="col-sm-5">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">email</i></span>
                     </div>
-                    <input formControlName="cedula" type="text" class="form-control" placeholder="Cedula">
-                    <div *ngIf="formLogup.get('cedula').errors && formLogup.get('cedula').touched">
-                        <p *ngIf="formLogup.get('cedula').hasError('required')">
+                    <input formControlName="cedula" type="text" class="form-control" placeholder="Cédula">
+                    
+                </div>
+                <div *ngIf="formLogup.get('cedula').errors && formLogup.get('cedula').touched">
+                    <p *ngIf="formLogup.get('cedula').hasError('required')">
 
-                            La cedula es requerida
-                        </p>
-                    </div>
+                        La cédula es requerida
+                    </p>
                 </div>
             </div>
         </div>
@@ -80,11 +104,12 @@
                         <span class="input-group-text"><i class="material-icons">account_circle</i></span>
                     </div>
                     <input formControlName="nombreUsuario" type="text" class="form-control" placeholder="Nombre usuario">
-                    <div *ngIf="formLogup.get('nombreUsuario').errors && formLogup.get('nombreUsuario').touched">
-                        <p *ngIf="formLogup.get('nombreUsuario').hasError('required')">
-                            El nombre de usuario es requerido
-                        </p>
-                    </div>
+                   
+                </div>
+                <div *ngIf="formLogup.get('nombreUsuario').errors && formLogup.get('nombreUsuario').touched">
+                    <p *ngIf="formLogup.get('nombreUsuario').hasError('required')">
+                        El nombre de usuario es requerido
+                    </p>
                 </div>
             </div>
         </div>
@@ -98,14 +123,15 @@
                     </div>
                     <input formControlName="password" type="password" id="password" class="form-control" placeholder="contraseña">
                     <!-- {{formLogup.get('password').errors|json}} -->
-                    <div *ngIf="formLogup.get('password').errors && formLogup.get('password').touched">
-                        <p *ngIf="formLogup.get('password').hasError('required')">
-                            La contraseña es requerida
-                        </p>
-                        <p *ngIf="formLogup.get('password').hasError('minlength')">
-                            La contraseña debe tener almenos {{formLogup.get('password').errors.minlength.requiredLength}} caracteres
-                        </p>
-                    </div>
+                   
+                </div>
+                <div *ngIf="formLogup.get('password').errors && formLogup.get('password').touched">
+                    <p *ngIf="formLogup.get('password').hasError('required')">
+                        La contraseña es requerida
+                    </p>
+                    <p *ngIf="formLogup.get('password').hasError('minlength')">
+                        La contraseña debe tener almenos {{formLogup.get('password').errors.minlength.requiredLength}} caracteres
+                    </p>
                 </div>
             </div>
         </div>
@@ -118,14 +144,15 @@
                         <span class="input-group-text"><i class="material-icons">contact_phone</i></span>
                     </div>
                     <input formControlName="telefono" type="text" class="form-control" placeholder="Telefono">
-                    <div *ngIf="formLogup.get('telefono').errors && formLogup.get('telefono').touched">
-                        <p *ngIf="formLogup.get('telefono').hasError('required')">
-                            El telefono es requerido
-                        </p>
-                        <p *ngIf="formLogup.get('telefono').hasError('minlength')">
-                            telefono {{formLogup.get('telefono').errors.minlength.requiredLength}} caracteres
-                        </p>
-                    </div>
+                    
+                </div>
+                <div *ngIf="formLogup.get('telefono').errors && formLogup.get('telefono').touched">
+                    <p *ngIf="formLogup.get('telefono').hasError('required')">
+                        El telefono es requerido
+                    </p>
+                    <p *ngIf="formLogup.get('telefono').hasError('minlength')">
+                        telefono {{formLogup.get('telefono').errors.minlength.requiredLength}} caracteres
+                    </p>
                 </div>
             </div>
         </div>
@@ -138,11 +165,12 @@
                         <span class="input-group-text"><i class="material-icons">person_pin_circle</i></span>
                     </div>
                     <input formControlName="direccion" type="text" class="form-control" placeholder="Direccion">
-                    <div *ngIf="formLogup.get('direccion').errors && formLogup.get('direccion').touched">
-                        <p *ngIf="formLogup.get('direccion').hasError('required')">
-                            La dirección es requerida
-                        </p>
-                    </div>
+                    
+                </div>
+                <div *ngIf="formLogup.get('direccion').errors && formLogup.get('direccion').touched">
+                    <p *ngIf="formLogup.get('direccion').hasError('required')">
+                        La dirección es requerida
+                    </p>
                 </div>
             </div>
         </div>
@@ -155,11 +183,12 @@
                         <span class="input-group-text"><i class="material-icons">date_range</i></span>
                     </div>
                     <input formControlName="fecha" type="date" class="form-control" placeholder="">
-                    <div *ngIf="formLogup.get('fecha').errors && formLogup.get('fecha').touched">
-                        <p *ngIf="formLogup.get('fecha').hasError('required')">
-                            Fecha es requerida
-                        </p>
-                    </div>
+                    
+                </div>
+                <div *ngIf="formLogup.get('fecha').errors && formLogup.get('fecha').touched">
+                    <p *ngIf="formLogup.get('fecha').hasError('required')">
+                        Fecha es requerida
+                    </p>
                 </div>
             </div>
         </div>
@@ -327,5 +356,7 @@
 
         <button [disabled]="formLogup.invalid" type="submit" class="btn btn-primary">Enviar</button>
     </form>
+    
 </div>
+
 <app-footer></app-footer>
