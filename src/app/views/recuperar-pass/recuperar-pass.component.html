@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="container p-3">
     <form [formGroup]="formLogup" (submit)="get_data()" errorTailor>
-        <legend>Recuperar Contraseña</legend>
+        <legend>Recuperar ContraseÃ±a</legend>
         Valido:{{formLogup.valid}}
 
         <div class="form-group row">
@@ -29,7 +29,7 @@
 <!-- tempaltes para lso erores -->
 <ng-template let-error let-text="text" #passwordError>
     <div *ngIf="error?.minlength">
-        <i>La contraseña debe tener almenos ({{error?.minlength?.requiredLength}}), caracteres</i>
+        <i>La contraseï¿½a debe tener almenos ({{error?.minlength?.requiredLength}}), caracteres</i>
     </div>
 </ng-template>
 

@@ -23,7 +23,8 @@ export class RecuperarPassComponent implements OnInit {
   get_data() {
     console.log('Valores FormLogup');
     console.log(this.formLogup.value);
-   this.server.verCorreoRecuperar(this.formLogup.value).subscribe(res=>console.log("ressss",res));
+   this.server.verCorreoRecuperar(this.formLogup.get('email').value).subscribe(res=>console.log("ressss",res));
+   
    
 
   }
