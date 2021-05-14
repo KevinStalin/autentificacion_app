@@ -21,7 +21,7 @@ export class ApiService {
     return this.http.post(this.URL_API+'/registrar',user);
   }
   verCorreoRecuperar(email:String){
-    return this.http.get<mail>(this.URL_API+'/recuperar/'+'aylis@hotmail.com');
+    return this.http.get<mail>(this.URL_API+'/recuperar/'+email);
   }
   check_email_user(email:String){
     return this.http.get<mail>(this.URL_API+'/verifica_correo/'+email);
