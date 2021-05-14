@@ -1,15 +1,25 @@
 <app-header></app-header>
+<br>
+<div align="center">
+    <h2>Sistema de Autenticación</h2>
+    <p>
+         <strong>SELECCIONE SU PAÍS DE ACUERDO A SU REGIÓN</strong>
+    </p>
+</div>
 
 <div class="container">
     <table class="table table-striped">
         <tr>
 
         </tr>
-        <tbody>
+    
+        <tbody align="center" >
             <tr *ngFor="let p of ser.paisess">
-                <td><img type="button" (click)="open(p.p1.c1,p.cu.cus)" src="../../../assets/imagenes/{{p.p1.n1}}.png"> {{p.p1.n1}}</td>        
-                <td><img type="button" (click)="open(p.p2.c1,p.cu.cus)" src="../../../assets/imagenes/{{p.p2.n1}}.png"> {{p.p2.n1}}</td>
-                <td><img type="button" (click)="open(p.p3.c1,p.cu.cus)" src="../../../assets/imagenes/{{p.p3.n1}}.png"> {{p.p3.n1}}</td>
+                <td><img class="pulse" type="button" (click)="open(p.p1.c1,p.cu.cus)" src="../../../assets/paises/{{p.p1.n1}}.png" width="30%"> <br> {{p.p1.n1}}</td>        
+                <td><img class="pulse" type="button" (click)="open(p.p2.c1,p.cu.cus)" src="../../../assets/paises/{{p.p2.n1}}.png" width="30%"> <br> {{p.p2.n1}}</td>
+                <td><img class="pulse" type="button" (click)="open(p.p3.c1,p.cu.cus)" src="../../../assets/paises/{{p.p3.n1}}.png" width="30%"> <br> {{p.p3.n1}}</td>
+                <td><img class="pulse" type="button" (click)="open(p.p3.c1,p.cu.cus)" src="../../../assets/paises/{{p.p3.n1}}.png" width="30%"> <br> {{p.p3.n1}}</td>
+
             </tr>
         </tbody>
     </table>
