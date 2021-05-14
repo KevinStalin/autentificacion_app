@@ -12,6 +12,7 @@ import { LoginAuntentComponent } from './views/login-auntent/login-auntent.compo
 import { LogupAutentComponent } from './views/logup-autent/logup-autent.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { RecuperarPassComponent } from './views/recuperar-pass/recuperar-pass.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
 
     routingComponents,
     LoginAuntentComponent,
-    LogupAutentComponent
+    LogupAutentComponent,
+    RecuperarPassComponent
 
   ],
   imports: [

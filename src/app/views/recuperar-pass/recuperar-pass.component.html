@@ -1,0 +1,51 @@
+<app-header></app-header>
+<div class="container p-3">
+    <form [formGroup]="formLogup" (submit)="get_data()" errorTailor>
+        <legend>Recuperar Contraseña</legend>
+        Valido:{{formLogup.valid}}
+
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Correo</label>
+            <div class="col-sm-10">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="material-icons">contact_mail</i></span>
+                    </div>
+                    <input formControlName="email" type="text" class="form-control" placeholder="email@example.com" [controlErrorsTpl]="emailError">
+                </div>
+                {{formLogup.get("email").errors|json}}
+            </div>
+        </div>
+
+      
+     
+
+ 
+
+        <button [disabled]="formLogup.invalid" type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+<app-footer></app-footer>
+<!-- tempaltes para lso erores -->
+<ng-template let-error let-text="text" #passwordError>
+    <div *ngIf="error?.minlength">
+        <i>La contraseña debe tener almenos ({{error?.minlength?.requiredLength}}), caracteres</i>
+    </div>
+</ng-template>
+
+<ng-template let-error let-text="text" #cedulaErr>
+    {{error|json}} {{text}}
+</ng-template>
+
+<ng-template let-error let-text="text" #emailError>
+    {{error|json}} {{text}}
+</ng-template>
+
+
+<ng-template let-error let-text="text" #messagePasswordError>
+    <!--  {{ error | json }} {{ text }}-->
+    <span class="control-error">Error:</span>
+    <div *ngIf="error?.minlength">
+        <i>No cumples con los caracteres minimos que son ({{error?.minlength?.requiredLength}}), ingresaste solo: {{error?.minlength?.actualLength}}</i>
+    </div>
+</ng-template>

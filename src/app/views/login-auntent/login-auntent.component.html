@@ -7,14 +7,12 @@
         </tr>
         <tbody>
             <tr *ngFor="let p of ser.paisess">
-                <td><img src="../../../assets/imagenes/{{p.n1}}.png"> {{p.n1}}</td>
-                <!-- <td>{{p.n1}}</td> -->
-                <td><img src="../../../assets/imagenes/{{p.n2}}.png"> {{p.n2}}</td>
-                <td><img src="../../../assets/imagenes/{{p.n3}}.png"> {{p.n3}}</td>
+                <td><img type="button" (click)="open(p.p1.c1,p.cu.cus)" src="../../../assets/imagenes/{{p.p1.n1}}.png"> {{p.p1.n1}}</td>        
+                <td><img type="button" (click)="open(p.p2.c1,p.cu.cus)" src="../../../assets/imagenes/{{p.p2.n1}}.png"> {{p.p2.n1}}</td>
+                <td><img type="button" (click)="open(p.p3.c1,p.cu.cus)" src="../../../assets/imagenes/{{p.p3.n1}}.png"> {{p.p3.n1}}</td>
             </tr>
         </tbody>
     </table>
-
 </div>
 
 <app-footer></app-footer>
