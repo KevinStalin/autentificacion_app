@@ -10,7 +10,7 @@ import {pais} from '../../models/prueba-pais'
 export class LoginAuntentComponent implements OnInit {
 
  
-  constructor(private ser:ApiService) { }
+  constructor(public ser:ApiService) { }
 
   ngOnInit(): void {
     this.ser.get_countrys('aylis@hotmail.com').subscribe(
