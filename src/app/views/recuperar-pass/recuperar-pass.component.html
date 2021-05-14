@@ -1,9 +1,7 @@
 <app-header></app-header>
 <div class="container p-3">
     <form [formGroup]="formLogup" (submit)="get_data()">
-        <legend>Recuperar Contrase�a</legend>
-
-
+        <legend>Recuperar Contraseña</legend>
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Correo</label>
             <div class="col-sm-10">
@@ -13,14 +11,16 @@
                     </div>
                     <input formControlName="email" type="text" class="form-control" placeholder="email@example.com">
                 </div>
+                <div *ngIf="formLogup.get('email').errors && formLogup.get('email').touched">
+                    <p *ngIf="formLogup.get('email').hasError('required')">
+                        EL email requerido
+                    </p>
+                    <p *ngIf="formLogup.get('email').hasError('email')">
+                        No es un e-mail
+                    </p>
+                </div>
             </div>
         </div>
-
-
-
-
-
-
         <button [disabled]="formLogup.invalid" type="submit" class="btn btn-primary">Enviar</button>
     </form>
 </div>

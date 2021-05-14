@@ -15,18 +15,13 @@ export class RecuperarPassComponent implements OnInit {
 
   ngOnInit(): void {
     this.formLogup = this.formBuilder.group({
- 
         email: ['', [Validators.required, Validators.email]]
-
       });
   }
   get_data() {
     console.log('Valores FormLogup');
     console.log(this.formLogup.value);
-    console.log(this.formLogup.get('email').value);
    this.server.verCorreoRecuperar(this.formLogup.get('email').value).subscribe(res=>console.log("ressss",res));
-   
-
   }
 
 }
