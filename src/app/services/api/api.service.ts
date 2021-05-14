@@ -20,7 +20,9 @@ export class ApiService {
     console.log(user);
     return this.http.post(this.URL_API+'/registrar',user);
   }
-
+  verCorreoRecuperar(email:String){
+    return this.http.get<mail>(this.URL_API+'/recuperar/'+'aylis@hotmail.com');
+  }
   check_email_user(email:String){
     return this.http.get<mail>(this.URL_API+'/verifica_correo/'+email);
   }
