@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
-
+import {Router} from '@angular/router'
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api/api.service';
 import {MyValidations} from '../../utils/my-validations';
@@ -12,7 +12,7 @@ import {MyValidations} from '../../utils/my-validations';
 })
 export class LoginComponent implements OnInit {
   public formLogin: FormGroup;
-  constructor(private formBuilder: FormBuilder, private server: ApiService) { }
+  constructor(private formBuilder: FormBuilder, private server: ApiService,private ruta:Router) { }
 
   ngOnInit(): void {
     this.formLogin=this.formBuilder.group({
@@ -24,8 +24,16 @@ export class LoginComponent implements OnInit {
   
   get_data() {
     console.log('Valores Login');
-    console.log(this.formLogin.value);
-    this.server.addUser(this.formLogin.value).subscribe(res=>console.log(res));
+    console.log(this.formLogin.get('email').value);
+    this.server.get_login(this.formLogin.value).subscribe(
+      res=>{
+        console.log(res);
+        if(res.ok){
+          this.ruta.navigate(['/login-autent',this.formLogin.get('email').value])
+        }
+  
+      }
+    );
   }
 
 }

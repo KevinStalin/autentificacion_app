@@ -24,7 +24,7 @@ const routes: Routes = [
     component: LogupAutentComponent
   },
   {
-    path: 'login-autent',
+    path: 'login-autent/:correo',
     component: LoginAuntentComponent
   },
 {

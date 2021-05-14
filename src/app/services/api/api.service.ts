@@ -31,7 +31,12 @@ export class ApiService {
   get_countrys(email:String){
     return this.http.get<pais[]>(this.URL_API+'/consultaCodigo/'+email);
   }
-
+  get_login(user){
+     console.log('2222 va al servidor');
+    console.log(user);
+    return this.http.post<mail>(this.URL_API+'/login',user);
+  }
+ 
   vaildaUserAuten(correo:String){
 
   }
