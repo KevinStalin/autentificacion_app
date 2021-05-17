@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
   get_data() {
     console.log('Valores Login');
     console.log(this.formLogin.value);
-    this.server.addUser(this.formLogin.value).subscribe(res=>console.log(res));
   }
 
 }

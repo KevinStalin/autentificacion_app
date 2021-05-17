@@ -85,13 +85,18 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="material-icons">email</i></span>
                     </div>
-                    <input formControlName="cedula" type="text" class="form-control" placeholder="Cédula">
-
+                    <input formControlName="cedula" type="text" class="form-control" placeholder="Cédula"> {{formLogup.get('cedula').errors |json}}
                 </div>
                 <div *ngIf="formLogup.get('cedula').errors && formLogup.get('cedula').touched">
                     <p *ngIf="formLogup.get('cedula').hasError('required')">
 
                         La cédula es requerida
+                    </p>
+                    <p *ngIf="formLogup.get('cedula').hasError('minlength')">
+                        La Cedula debe tener {{formLogup.get('cedula').errors.minlength.requiredLength}} caracteres
+                    </p>
+                    <p *ngIf="formLogup.get('cedula').hasError('ok')">
+                        Cedula Registrada
                     </p>
                 </div>
             </div>
@@ -110,6 +115,9 @@
                 <div *ngIf="formLogup.get('nombreUsuario').errors && formLogup.get('nombreUsuario').touched">
                     <p *ngIf="formLogup.get('nombreUsuario').hasError('required')">
                         El nombre de usuario es requerido
+                    </p>
+                    <p *ngIf="formLogup.get('nombreUsuario').hasError('ok')">
+                        El nombre de usuario ya existe
                     </p>
                 </div>
             </div>
@@ -342,10 +350,11 @@
         </div>
         <div align="center">
             <button [disabled]="formLogup.invalid" type="submit" class="btn btn-primary" href="/logup-autent">Enviar</button>
-            <a href="logup-autent">Next</a>
+            <!-- <a href="logup-autent">Next</a> -->
         </div>
         <br><br>
     </form>
+
 
 </div>
 

@@ -20,7 +20,7 @@ const routes: Routes = [
     component: LogupComponent
   },
   {
-    path: 'logup-autent',
+    path: 'logup-autent/:correo',
     component: LogupAutentComponent
   },
   {
