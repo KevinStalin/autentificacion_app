@@ -1,0 +1,8 @@
+        td:hover {
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+        }
+        
+        td {
+            overflow: hidden;
+        }
