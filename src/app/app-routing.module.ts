@@ -5,6 +5,7 @@ import { LogupComponent } from './views/logup/logup.component';
 import { LogupAutentComponent } from './views/logup-autent/logup-autent.component';
 import { LoginAuntentComponent } from './views/login-auntent/login-auntent.component';
 import { RecuperarPassComponent } from './views/recuperar-pass/recuperar-pass.component';
+import { BienvenidaComponent } from './views/bienvenida/bienvenida.component';
 import { VigilanteGuard } from './vigilante.guard';
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
 {
     path: 'login-recuperar',
     component: RecuperarPassComponent
+  },
+  {
+    path: 'bienvenida',
+    component: BienvenidaComponent,
   }
 ];
 
@@ -40,4 +45,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents=[LoginComponent,LogupComponent,LoginAuntentComponent,LogupAutentComponent,RecuperarPassComponent]
+export const routingComponents=[LoginComponent,LogupComponent,LoginAuntentComponent,LogupAutentComponent,RecuperarPassComponent,BienvenidaComponent]

@@ -30,11 +30,15 @@ export class LoginComponent implements OnInit {
       res=>{
         console.log(res);
         if(res.ok){
-          this.cookieS.set('access',res.message,4);
+          this.cookieS.set('access',res.message,4,'/');
           this.ruta.navigate(['/login-autent',this.formLogin.get('email').value])
+        }else{
+          alert('Usuario o Contraseña Incorrecta');
         }
       }
     );
   }
-
+  registrar(){
+    this.ruta.navigate(['/','logup'])
+  }
 }

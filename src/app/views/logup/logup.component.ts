@@ -22,7 +22,7 @@ export class LogupComponent implements OnInit {
       nombre: ['', [Validators.required]],
       apellido: ['', Validators.required],
       email: ['', [Validators.required, Validators.email], MyValidations.validaEmail(this.server)],
-      cedula: ['' ,[Validators.required, Validators.minLength(10)],MyValidations.validaID(this.server),MyValidations.validarCedula],
+      cedula: ['' ,[Validators.required, Validators.minLength(10)],MyValidations.validaID(this.server)],
       nombreUsuario: ['', Validators.required,MyValidations.validaNick(this.server)],
       password: ['', [Validators.required, Validators.minLength(4)]],
       telefono: ['', [Validators.required, Validators.minLength(10)]],

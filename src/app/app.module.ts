@@ -24,8 +24,7 @@ import { CookieService } from 'ngx-cookie-service';
     routingComponents,
     LoginAuntentComponent,
     LogupAutentComponent,
-    RecuperarPassComponent
-
+    RecuperarPassComponent,
   ],
   imports: [
     BrowserModule,

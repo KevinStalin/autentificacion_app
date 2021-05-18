@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ApiService } from '../../services/api/api.service';
 
 @Component({
   selector: 'app-logup-autent',
@@ -8,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class LogupAutentComponent implements OnInit {
 
-  constructor(private ruta:ActivatedRoute) { }
+  constructor(private ruta:ActivatedRoute,private API:ApiService) { }
 
   correo="";
   ngOnInit(): void {
@@ -20,13 +21,11 @@ export class LogupAutentComponent implements OnInit {
   }
 
   manadarDatos(region){
-    console.log("Correo->",this.correo);
-    console.log("region-_>",region);
     let data={
       email:this.correo,
       region:region
     }
     console.log(data);
+    this.API.add_reg_user(data).subscribe(res=>console.log(res))
   }
-
 }

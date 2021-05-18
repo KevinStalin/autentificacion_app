@@ -29,9 +29,12 @@ export class LoginAuntentComponent implements OnInit {
 //  valoru=valoru-1
     if(valor==valoru){
     console.log('Correcto '+valor);
-    this.rutas.navigate(['/bienvenida'])
+    this.rutas.navigate(['/','bienvenida'])
     }else{ 
       console.log('Incorrecto '+valor);
+      alert('Pais Incorrecto\nIntente denuevo');
+      this.rutas.navigate(['/','login'])
+
     }
   }
 }

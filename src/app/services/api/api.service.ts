@@ -32,6 +32,10 @@ export class ApiService {
     return this.http.get<mail>(this.URL_API+'/verifica_nick/'+nombre);
   }
 
+  add_reg_user(autent){
+    return this.http.post<mail>(this.URL_API+'/region',autent);
+  }
+
   // trae los pasises mesclasdos
   get_countrys(email:String){
     return this.http.get<pais[]>(this.URL_API+'/consultaCodigo/'+email);
