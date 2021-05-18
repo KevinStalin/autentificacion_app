@@ -5,6 +5,7 @@ import { LogupComponent } from './views/logup/logup.component';
 import { LogupAutentComponent } from './views/logup-autent/logup-autent.component';
 import { LoginAuntentComponent } from './views/login-auntent/login-auntent.component';
 import { RecuperarPassComponent } from './views/recuperar-pass/recuperar-pass.component';
+import { VigilanteGuard } from './vigilante.guard';
 const routes: Routes = [
   {
     path: '',
@@ -21,11 +22,12 @@ const routes: Routes = [
   },
   {
     path: 'logup-autent/:correo',
-    component: LogupAutentComponent
+    component: LogupAutentComponent,
   },
   {
-    path: 'login-autent',
-    component: LoginAuntentComponent
+    path: 'login-autent/:correo',
+    component: LoginAuntentComponent,
+    canActivate:[VigilanteGuard]
   },
 {
     path: 'login-recuperar',

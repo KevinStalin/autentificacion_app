@@ -13,6 +13,7 @@ import { LogupAutentComponent } from './views/logup-autent/logup-autent.componen
 
 import { HttpClientModule } from '@angular/common/http';
 import { RecuperarPassComponent } from './views/recuperar-pass/recuperar-pass.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { RecuperarPassComponent } from './views/recuperar-pass/recuperar-pass.co
     ReactiveFormsModule,
     HttpClientModule    
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
