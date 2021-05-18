@@ -11,7 +11,8 @@ import {usuarioBD} from '../../models/registro_usuario'
 })
 export class ApiService {
 
-  URL_API = 'http://localhost:3000/API';
+  // URL_API = 'http://localhost:3000/API';
+  URL_API='https://api-calidad.herokuapp.com/API'
   paisess:pais[];
 
   constructor(private http: HttpClient) { }
