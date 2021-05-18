@@ -20,27 +20,32 @@
             <div>
                 <table class="table table-striped">
                     <tr>
-                        <td (click)="manadarDatos(3)"><img src="../../../assets/imagenes/reg1.png" width=70 height=50></td>
-                        <td (click)="manadarDatos(1)"><img src="../../../assets/imagenes/reg2.png" width=70 height=50></td>
-                        <td (click)="manadarDatos(0)"><img src="../../../assets/imagenes/reg3.png" width=70 height=50></td>
+                        <td (click)="manadarDatos(0)"><img src="../../../assets/imagenes/reg0.png" width=70 height=50></td>
+                        <td (click)="manadarDatos(1)"><img src="../../../assets/imagenes/reg1.png" width=70 height=50></td>
+                        <td (click)="manadarDatos(2)"><img src="../../../assets/imagenes/reg2.png" width=70 height=50></td>
+                        <td (click)="manadarDatos(3)"><img src="../../../assets/imagenes/reg3.png" width=70 height=50></td>
                         <td (click)="manadarDatos(4)"><img src="../../../assets/imagenes/reg4.png" width=70 height=50></td>
                         <td (click)="manadarDatos(5)"><img src="../../../assets/imagenes/reg5.png" width=70 height=50></td>
-                        <td (click)="manadarDatos(2)"><img src="../../../assets/imagenes/reg6.png" width=70 height=50></td>
                     </tr>
                     <tr>
-                        <td>Europa</td>
-                        <td>America del sur</td>
                         <td>America del norte</td>
+                        <td>America del sur</td>
+                        <td>Asia</td>
+                        <td>Europa</td>
                         <td>Africa</td>
                         <td>Oceania</td>
-                        <td>Asia</td>
                     </tr>
                 </table>
+            </div>
+            <div class="container">
+                <legend>Region Seleccionada</legend>
+                <br>
+                <img src="../../../assets/imagenes/reg{{region}}.png" width=120 height=100>
             </div>
         </div>
         <br>
         <div align="right">
-            <button class="btn btn-primary" href="#login">Enviar</button>
+            <button type="button" class="btn btn-primary" (click)="mandaAPP()">Enviar</button>
             <!-- <a href="login">Next</a> -->
         </div>
     </form>
