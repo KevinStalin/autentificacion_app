@@ -4,14 +4,14 @@ input.ng-invalid.ng-touched {
     border: solid 2px rgb(187, 59, 59);
     border-radius: 20px;
     font-family: Monaco;
-    font: size 14px;
+    font-size: 14px;
 }
 
 select.ng-invalid.ng-touched {
     border: solid 2px rgb(187, 59, 59);
     border-radius: 20px;
     font-family: Monaco;
-    font: size 14px;
+    font-size: 14px;
 }
 
 
@@ -21,24 +21,31 @@ input.ng-valid {
     border: solid 2px rgb(114, 179, 84);
     border-radius: 20px;
     font-family: Monaco;
-    font: size 14px;
+    font-size: 14px;
 }
 
 select.ng-valid {
     border: solid 2px rgb(114, 179, 84);
     border-radius: 20px;
     font-family: Monaco;
-    font: size 14px;
+    font-size: 14px;
 }
 
 label {
     font-family: Monaco;
-    font: size 14px;
+    font-size: 16px;
 }
 
 p {
     color: red;
     font-family: Exton Free Trial;
     font-family: Monaco;
-    font: size 14px;
+    font-size: 18px;
+}
+
+option {
+    color: BLACK;
+    font-family: Exton Free Trial;
+    font-family: Monaco;
+    font-size: 16px;
 }

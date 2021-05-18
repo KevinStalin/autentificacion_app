@@ -4,6 +4,7 @@ import {Router} from '@angular/router'
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api/api.service';
 import {MyValidations} from '../../utils/my-validations';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import {MyValidations} from '../../utils/my-validations';
 })
 export class LoginComponent implements OnInit {
   public formLogin: FormGroup;
-  constructor(private formBuilder: FormBuilder, private server: ApiService,private ruta:Router) { }
+  constructor(private formBuilder: FormBuilder, private server: ApiService,private ruta:Router, private cookieS:CookieService) { }
 
   ngOnInit(): void {
     this.formLogin=this.formBuilder.group({
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
       res=>{
         console.log(res);
         if(res.ok){
+          this.cookieS.set('access',res.message,4);
           this.ruta.navigate(['/login-autent',this.formLogin.get('email').value])
         }
       }
