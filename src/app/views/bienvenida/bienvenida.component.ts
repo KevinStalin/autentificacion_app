@@ -16,8 +16,6 @@ export class BienvenidaComponent implements OnInit {
 
 
   redirige(){
-    // this.cookie= "nombre=; max-age=0";
-    document.cookie="access=; max-age=0";
     this.ruta.navigate(['/','login'])
   }
 }

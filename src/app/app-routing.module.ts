@@ -37,6 +37,7 @@ const routes: Routes = [
   {
     path: 'bienvenida',
     component: BienvenidaComponent,
+    canActivate:[VigilanteGuard]
   }
 ];
 
