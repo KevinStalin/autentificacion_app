@@ -13,6 +13,7 @@ import { LogupAutentComponent } from './views/logup-autent/logup-autent.componen
 
 import { HttpClientModule } from '@angular/common/http';
 import { RecuperarPassComponent } from './views/recuperar-pass/recuperar-pass.component';
+import { BienvenidaComponent } from './views/bienvenida/bienvenida.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RecuperarPassComponent } from './views/recuperar-pass/recuperar-pass.co
     routingComponents,
     LoginAuntentComponent,
     LogupAutentComponent,
-    RecuperarPassComponent
+    RecuperarPassComponent,
+    BienvenidaComponent
 
   ],
   imports: [
